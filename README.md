@@ -1,6 +1,7 @@
 # Klausurvorlage
 
 Dies ist eine Vorlage für Klausuren oder Prüfungen in der Form einer LyX- und LaTeX-Datei.
+![ersteseitebeispiel.png](ersteseitebeispiel.png)
 Diese Vorlage hat folgende Mermale:
 
 ## Dateiname ist Dokumentenüberschrift
