@@ -1,0 +1,350 @@
+%% LyX 2.4.2.1 created this file.  For more info, see https://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[fontsize=12,paper=a4,ngerman,DIV=15, BCOR0mm,table,pointlessnumbers, headings=small, appendixprefix=false, numbers=noenddot, listof=totoc, bibliography=totoc]{scrartcl}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage[utf8]{inputenc}
+\usepackage{cancel}
+\usepackage{graphicx}
+
+\makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+\pdfpageheight\paperheight
+\pdfpagewidth\paperwidth
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+%\usepackage{xcolor}
+\usepackage[T1]{fontenc}
+\usepackage{type1ec}
+\usepackage{amsmath}
+\usepackage{palatino}
+\usepackage{mathpazo}
+\usepackage{etoolbox} % für die automatisiert erstellte tabelle, genauer: \appto
+
+\usepackage{booktabs} %fr horizontale dicke striche in tabellen
+\usepackage{tikz}
+%\usepackage{colortbl} % für \cellcolor in tabellen
+
+
+\usepackage{xstring}  % um aus dem Dateinamen das Semester zu uebernehmen
+
+
+% Fuer Listings, Quellcode, Progamme
+\usepackage{listings}
+\lstset{numbers=left, numberstyle=\tiny, numbersep=5pt, basicstyle=\scriptsize\ttfamily, frame=single}
+\lstset{language=SQL}
+
+
+\usepackage{longtable}
+\usepackage{dcolumn}
+\usepackage{textgreek}
+\usepackage{lscape}
+
+\usepackage{float} %erforderlich um tabellen wie figuren numerieren zu lassen
+\usepackage{fixmath}
+
+
+\usepackage{graphics}
+
+\usepackage{rotating}
+\usepackage{scrlayer-scrpage}
+\usepackage{upgreek}
+\renewcommand{\Omega}{\upOmega}
+\usepackage{mathrsfs}
+
+\restylefloat{table} %erforderlich um tabellen wie figuren numerieren zu lassen
+\mathcode`,="013B %Komma ist Dezimaltrennzeichen in mat. Formeln
+\mathcode`.="613A %Komma ist Dezimaltrennzeichen in mat. Formeln
+%\setlength{\textheight}{23.8cm}
+
+%\linespread{1}
+  %aufname der subsubsections ins inhaltsverz.
+ %numerierung der subsubsections
+%\renewcommand*{\chapterpagestyle}{scrheadings} %setzt eine Kopfzeile auf Kapitelanfangsseiten
+\renewcommand*{\indexpagestyle}{scrheadings} %setzt eine Kopfzeile auf Indexseiten
+\setcounter{topnumber}{4}
+\setcounter{bottomnumber}{4}
+\setcounter{totalnumber}{4}
+\renewcommand\floatpagefraction{.98} %anteil an gleitobjekten pro Gleitobjekt-Seite, bevor eine neue Seite angelegt wird
+\renewcommand\topfraction{1} %anteil pro seite an Gleitobjekten am oberen rand
+\renewcommand\bottomfraction{1} %anteil pro seite an Gleitobjekten am unteren rand
+\renewcommand\textfraction{.0}   %minimalanteil Text pro Seite
+\setcounter{totalnumber}{3}
+\setcounter{topnumber}{3}
+\setcounter{bottomnumber}{3}
+
+\usepackage[explicit]{titlesec}
+\titleformat{\chapter}{\scshape\bfseries\Large}{}{0mm}{\thechapter\  #1} 
+\titleformat{name=\chapter,numberless}{\scshape\bfseries\Large}{}{0mm}{#1}
+\titleformat{\section}{\bfseries\large}{}{0mm}{Aufgabe \thesection\ #1} 
+\titleformat{name=\section,numberless}{\itshape\bfseries\large}{}{0mm}{#1}
+
+\ohead{}
+\ihead{}
+\chead{}
+\cfoot[]{}
+\ifoot{}
+\ofoot[\pagemark]{\pagemark}
+\automark[subsection]{section}
+%\setheadsepline{1pt}
+\makeindex     % Fr das Sachregister/Index/Register
+%\pagenumbering{roman}
+\let\originalleft\left
+\let\originalright\right
+\renewcommand{\left}{\mathopen{}\mathclose\bgroup\originalleft}
+\renewcommand{\right}{\aftergroup\egroup\originalright}
+
+\usepackage{lastpage}
+
+
+
+
+%\usepackage[fontsize=0.6\paperwidth,text=$\Sigma$, color={[rgb]{1, 0.8, 0.8}}]{draftwatermark} % Fuer das Wasserzeichen
+
+% ###########################################################
+% #####  |   |   | Korrekturrand |   |   |   ################
+% ##### \|/ \|/ \|/             \|/ \|/ \|/  ################
+% ###########################################################
+\usepackage{background}
+\SetBgScale{1}
+\SetBgAngle{0}
+\SetBgColor{black}
+\SetBgContents{\rule{.4pt}{260mm}}
+\SetBgHshift{87mm}
+% ###########################################################
+% #####  /|\  /|\   /|\  Korrekturrand /|\  /|\  /|\  #######
+% #####   |    |     |                  |    |    |   #######
+% ###########################################################
+
+
+% ###########################################################
+% #####  |   |   |    Titel  |   |   |   ####################
+% ##### \|/ \|/ \|/         \|/ \|/ \|/  ####################
+% ###########################################################
+\usepackage{titling}
+\pretitle{
+\vspace*{-20mm}\begin{tabular}{rc}
+\vspace{5mm}
+Nachname: & \raisebox{-3mm}{\rule[0.5ex]{100mm}{1pt}}\tabularnewline
+\vspace{5mm}
+Vorname: & \raisebox{-3mm}{\rule[0.5ex]{100mm}{1pt}}\tabularnewline
+\vspace{5mm}
+Matrikelnummer: & \raisebox{-3mm}{\rule[0.5ex]{100mm}{1pt}}\tabularnewline
+%\vspace{5mm}
+%Abgabezeit: & \raisebox{-3mm}{\rule[0.5ex]{50mm}{1pt}} Uhr\tabularnewline
+\end{tabular}\\ %
+\hspace*{\fill}\large\textbf}
+%\StrLen{\jobname}[\tsjobnamelength]
+%\pgfmathresult
+%\newcommand{\datstart}{\pgfmathparse{int(\tsjobnamelength-3)}\pgfmathresult}
+%\let\StrMid{\jobname}{\ds}{21}}=\tsyr
+%\edef\datstart{\pgfmathparse{int(\tsjobnamelength-3)}\pgfmathresult}
+
+\posttitle{\hspace*{\fill}\null\\[2mm]}
+\preauthor{\hspace*{\fill}\scshape}
+\postauthor{\hspace*{\fill}\null\\[2mm]}
+\predate{\normalfont\large\hspace*{\fill}}
+\postdate{\hspace*{\fill}\null}
+%\pretocmd{\maketitle}{}{}{}
+%\apptocmd{\maketitle}{\bigskip}{}{}
+
+
+% ###########################################################
+% #####  /|\  /|\   /|\  Titel /|\  /|\  /|\  ###############
+% #####   |    |     |          |    |    |   ###############
+% ###########################################################
+
+% ###########################################################
+% #####  |   |   | Punkte der Aufgaben  |   |   |   #########
+% ##### \|/ \|/ \|/                    \|/ \|/ \|/  #########
+% ###########################################################
+
+% ### Siaenen-Klausurpunktetabelle
+\gdef\tscolformatstr{|c} % wird mit jeder Aufgabe verlängert und zuletzt in die aux-Datei geschrieben
+\gdef\tscolaufgabenstr{} % Aufgabennummern, wird mit jeder Aufgabe verlängert und zuletzt in die aux-Datei geschrieben
+\gdef\tscolmaxpktestr{} % wird mit jeder Aufgabe verlängert und zuletzt in die aux-Datei geschrieben
+\gdef\tscolemptystr{} % wird mit jeder Aufgabe verlängert und zuletzt in die aux-Datei geschrieben
+\newcounter{Gesamtpunkte}
+\begingroup
+\catcode`\&=12
+\gdef\tsamprsnd{&}%
+\endgroup
+\newcommand{\Aufgabe}[4]{%
+\section{(max. #1 Punkte)}%
+\edef\dmy{\thesection}%
+\global\edef\tscolaufgabenstr{\tscolaufgabenstr \tsamprsnd  \thesection }%
+\appto\tscolformatstr{|c} %
+\appto\tscolmaxpktestr{& #1 } %
+\appto\tscolemptystr{& } %
+\addtocounter{Gesamtpunkte}{#1}%
+\ifx \relax #4\relax Noch keine Aufgabe erstellt \else #4 \fi%
+\ifx \relax #2\relax \relax \else #2\\ \fi%
+\ifx \relax #3\relax \relax \else #3 \fi%
+}%
+% ### Ende Siaenen-Klausurpunktetabelle
+
+% ###########################################################
+% #####  /|\  /|\   /|\  Punkte der Aufgaben /|\  /|\  /|\  #
+% #####   |    |     |                        |    |    |   #
+% ###########################################################
+
+% ###########################################################
+% #####  |  Ueberarbeitetes \end{document}  |   |   #########
+% ##### \|/ \|/ \|/                    \|/ \|/ \|/  #########
+% ###########################################################
+% Doku: Am Ende des Dokuments müssen die Tabellen-Strings in die
+% Aux-Datei geschrieben werden.
+
+\let\oldenddocument\enddocument
+\renewcommand{\enddocument}{%
+ \makeatletter
+\write\@auxout{\string\gdef\string\tscolformatzusammen{\tscolformatstr ||c|}}
+\write\@auxout{\string\gdef\string\tscolaufgabenzusammen{\tscolaufgabenstr & Alle}}
+\write\@auxout{\string\gdef\string\tscolmaxpktezusammen{\tscolmaxpktestr & \theGesamtpunkte}}
+\write\@auxout{\string\gdef\string\tscolemptyzusammen{\tscolemptystr & }}
+\makeatother
+  \oldenddocument\relax%
+}
+
+
+% ###########################################################
+% #####  /|\  /|\                                 /|\  /|\  #
+% #####   |    |  Ueberarbeitetes \end{document}   |    |   #
+% ###########################################################
+
+% Quelle https://tex.stackexchange.com/questions/394489/how-to-replace-characters-from-jobname :
+\StrSubstitute{\jobname}{-}{ }[\subsemi]
+\StrSubstitute{\subsemi}{_}{ }[\subfinal]
+
+%Baustelle: Extrahieren einzelner Strings aus dem Dateinamen
+%\def\readjobname #1-#2-#3-#4\end{\def\klausurnamei{#2}\def\semester{#3}\def\jahr{#4}}
+%\def\isname #1\iftrue{\edef\tmp{\detokenize{#1}}\ifx\tmp\semester}
+%\expandafter\readjobname \jobname\end  % reading both parts of the job name
+%\isname Klausur\iftrue Name is Klausur\else Name isn't ingmod\fi
+%\isname foo\iftrue Name is foo\else Name isn't foo\fi
+%\jobname
+%name: \name
+%lang: \lang
+%\begingroup
+%\DeclareListParser{\docsvlist}{X} %etoolbox
+
+%\catcode`\X=12 % X ist jetzt ein Escape-Zeichen wie \
+%\edef\klausurnamegeteilt{\detokenize\expandafter{\klausurnamei}}
+%\def\klausurnamegeteilt{\detokenize{Angewandte\Mathematik}}
+%\catcode`\X=11 % X ist jetzt ein Escape-Zeichen wie \
+%\endgroup
+%\def\ReplaceStr#1{\IfSubStr{#1}{X}{\StrSubstitute{#1}{X}{ }}{#1}}
+%\def\klausurnamegeteilt{\ReplaceStr{AngewandteXMathematik}}
+%\edef\ktst{\klausurnamegeteilt}
+%\StrSubstitute{\klausurnamei}{X}{ }[\klausurnamegeteilt]
+%\showthe\klausurnamei
+%\showthe\klausurnamegeteilt
+
+\makeatother
+
+\usepackage{babel}
+\usepackage{listings}
+\lstset{inputencoding=utf8x}
+\begin{document}
+\title{{\Large}}
+\title{\subfinal}
+\author{Hochschule XYZ, Fakultät XYT., Prof. ABC}
+\date{Prüfungsdatum: 2025-06-12 09:00 Uhr, Dauer: 90 Minuten}
+
+\maketitle
+
+% ### Punkte-Tabelle. ###
+\makeatletter%
+\def\tspunktetabelle{ %
+%Wird nur erzeugt, wenn in der aux-Datei die Befehle colformat. und so weiter definiert sind.
+\@ifundefined{tscolformatzusammen}{}{%
+\@ifundefined{tscolaufgabenzusammen}{}{%
+\@ifundefined{tscolmaxpktezusammen}{}{%
+\@ifundefined{tscolemptyzusammen}{}{%
+    \expandafter\tabular\expandafter{\tscolformatzusammen}\hline 
+    Aufgabe: \tscolaufgabenzusammen \\ \hline
+    Max. Punkte: \tscolmaxpktezusammen \\\hline
+    Erreichte Punkte: \tscolemptyzusammen \\\hline%
+\endtabular %
+}}}}%
+} %[]
+\makeatother %
+\hfill{}\tspunktetabelle\hfill{}\null %
+% #### Ende Punkte-Tabelle ###
+
+{\Large\vspace{8mm}
+}\hfill{}{\Large Note:}\textsubscript{\rule[0.5ex]{70mm}{1pt}}\hfill{}~
+\begin{itemize}
+\item \setlength{\itemsep}{0pt} \setlength{\parskip}{0pt} \setlength{\parsep}{0pt}Zugelassene
+Hilfsmittel: zwei DIN A4-Blätter, Vorder- und Rückseite beliebig beschriftet,
+Papier, Lineal, Zirkel, Geodreieck, Sehhilfen, Stifte (keine roten
+und keine Bleistifte), Taschenrechner.
+\item Diese Aufgabenstellung der Prüfung besteht aus \pageref{LastPage}
+Seiten, wobei das Deckblatt mitgezählt wird. Überprüfen Sie die Aufgabenblätter
+auf Vollständigkeit.
+\end{itemize}
+
+\Aufgabe{6}{Lösung:
+
+Siehe Fragen}{\noindent\begin{minipage}[t]{1\columnwidth}%
+Bewertungsschema:
+
+Jede richtige Antwort: max. 2 P%
+\end{minipage}}{%
+\noindent\begin{minipage}[t]{1\columnwidth}%
+\begin{enumerate}
+\item Was ist die Antwort auf die erste Frage?\vspace{20mm}
+ Antwort: 42
+\item Wie heißt die Hauptstadt von Assyrien? Antwort: Assur\vspace{20mm}
+\item Welches ist die Höchstgeschwindigkeit einer unbeladenen Schwalbe?
+Antwort: das hängt von der Art der Schwalbe ab\vspace{20mm}
+\end{enumerate}
+%
+\end{minipage}}
+
+\Aufgabe{9}{\noindent\begin{minipage}[t]{1\columnwidth}%
+Musterlösung: 
+\begin{enumerate}
+\item Fügen Sie für süße Pfannekuchen Zucker zum Teig und für salzige Pfannekuchen
+Salz.
+\item Ersetzen Sie Eier durch Hafermilch
+\item Mischen Sie wenige Zutaten für einen Pfannekuchen.
+\end{enumerate}
+%
+\end{minipage}}{\noindent\begin{minipage}[t]{1\columnwidth}%
+Bewertungsschema:
+
+Pro Antwort korrekt: max. 3 P%
+\end{minipage}}{%
+\noindent\begin{minipage}[t]{1\columnwidth}%
+Entwickeln Sie ein Gericht für Pfannekuchen
+\begin{enumerate}
+\item Erstellen Sie zwei Versionen: Süß und Salzig.
+\item Verwenden Sie ausschließlich vegane Zutaten
+\item Der Preis darf 3 € nicht überschreiten
+\end{enumerate}
+%
+\end{minipage}}
+
+\Aufgabe{12}{Antwort: Dreiviertelkreis, $x=1$}{\noindent\begin{minipage}[t]{1\columnwidth}%
+Bewertungsschema:
+
+A: Name korrekt: max. 3 P
+
+A: Rechenaufgabe korrekt: max. 9 P%
+\end{minipage}}{%
+\noindent\begin{minipage}[t]{1\columnwidth}%
+Welche geometrische Form ist hier abgebildet? \\
+\includegraphics{figures/01_dreiviertelkreis/dreiviertelkreisn}
+
+Berechnen Sie $x$ mit
+\[
+x=\sqrt{\sin\left(2\,\pi\,50\,t\right)^{2}+\cos\left(2\,\pi\,50\,t\right)^{2}}
+\]
+%
+\end{minipage}}
+
+\null
+\end{document}
