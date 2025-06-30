@@ -25,8 +25,15 @@
 % Fuer Listings, Quellcode, Progamme
 \usepackage{listings}
 \lstset{numbers=left, numberstyle=\tiny, numbersep=5pt, basicstyle=\scriptsize\ttfamily, frame=single}
-\lstset{language=SQL}
-
+\lstset{literate=%
+  {Ö}{{\"O}}1
+  {Ä}{{\"A}}1
+  {Ü}{{\"U}}1
+  {ß}{{\ss}}1
+  {ü}{{\"u}}1
+  {ä}{{\"a}}1
+  {ö}{{\"o}}1
+}
 
 \usepackage{longtable}
 \usepackage{dcolumn}
@@ -171,7 +178,7 @@ Matrikelnummer: & \raisebox{-3mm}{\rule[0.5ex]{100mm}{1pt}}\tabularnewline
 \appto\tscolemptystr{& } %
 \addtocounter{Gesamtpunkte}{#1}%
 \ifx \relax #4\relax Noch keine Aufgabe erstellt \else #4 \fi%
-\ifx \relax #2\relax \relax \else #2\\ \fi%
+\ifx \relax #2\relax \relax \else \par\noindent\large\textbf{Musterlösung:}\normalsize\par\noindent\vspace{5mm} #2\\ \fi%
 \ifx \relax #3\relax \relax \else #3 \fi%
 }%
 % ### Ende Siaenen-Klausurpunktetabelle
@@ -324,7 +331,7 @@ End
 \end_local_layout
 \language ngerman
 \language_package default
-\inputencoding utf8
+\inputencoding utf8-plain
 \fontencoding auto
 \font_roman "default" "default"
 \font_sans "default" "default"
@@ -414,7 +421,7 @@ End
 \papersides 1
 \paperpagestyle default
 \tablestyle default
-\listings_params "inputencoding=utf8x"
+\listings_params "inputencoding=utf8"
 \tracking_changes false
 \output_changes false
 \change_bars false
@@ -1174,6 +1181,32 @@ Antwort:
 \end_inset
 
 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Programmcode muss als externe Datei eingebunden werden,
+ weil eine listings-Umgebung nicht als Argument einer externen Funktion übergeben werden kann.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "programmcode.txt"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+ende
 \end_layout
 
 \end_inset
